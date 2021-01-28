@@ -31,7 +31,8 @@ public class ScreenSlideActivity extends AppCompatActivity {
     private ViewPager mPager;
     private PagerAdapter pagerAdapter;
 
-    TextView tvKiemTra, tvTimer;
+    TextView tvKiemTra, tvTimer, tvXemDiem;
+    public int checkAns = 0;
 
     // CSDL
     QuestionController questionController;
@@ -65,6 +66,7 @@ public class ScreenSlideActivity extends AppCompatActivity {
 
         tvKiemTra = findViewById(R.id.tvKiemTra);
         tvTimer = findViewById(R.id.tvTimer);
+        tvXemDiem = findViewById(R.id.tvScore);
 
         tvKiemTra.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +107,7 @@ public class ScreenSlideActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return ScreenSlidePageFragment.create(arr_Ques, position);
+            return ScreenSlidePageFragment.create(position, checkAns);
         }
 
         @Override
@@ -173,20 +175,30 @@ public class ScreenSlideActivity extends AppCompatActivity {
         Button btnCancel, btnFinish;
         btnCancel = dialog.findViewById(R.id.btnCancel);
         btnFinish = dialog.findViewById(R.id.btnFinish);
+
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
             }
         });
+
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timer.cancel();
+                result();
                 dialog.dismiss();
             }
         });
         dialog.show();
+    }
+
+    public void result(){
+        checkAns = 1;
+        mPager.setCurrentItem(0);
+        tvXemDiem.setVisibility(View.VISIBLE);
+        tvKiemTra.setVisibility(View.GONE);
     }
 
     public class CounterClass extends CountDownTimer{

@@ -1,5 +1,6 @@
 package com.hoanglam0869.tracnghiem.slide;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -26,7 +27,9 @@ public class ScreenSlidePageFragment extends Fragment {
 
     ArrayList<Question> arr_Ques;
     public static final String ARG_PAGE = "page";
-    private int mPageNumber;    // vị trí trang hiện tại
+    public static final String ARG_CHECKANSWER = "checkAnswer";
+    public int mPageNumber;     // vị trí trang hiện tại
+    public int checkAns;        // biến kiểm tra
 
     TextView tvNum, tvQuestion;
     RadioGroup radioGroup;
@@ -39,9 +42,9 @@ public class ScreenSlidePageFragment extends Fragment {
         arr_Ques = new ArrayList<>();
         ScreenSlideActivity screenSlideActivity = (ScreenSlideActivity) getActivity();
         arr_Ques = screenSlideActivity.getData();
-
-        //arr_Ques = Parcels.unwrap(getArguments().getParcelable("arr_Ques"));
+        
         mPageNumber = getArguments().getInt(ARG_PAGE);
+        checkAns = getArguments().getInt(ARG_CHECKANSWER);
     }
 
     @Override
@@ -68,6 +71,14 @@ public class ScreenSlidePageFragment extends Fragment {
         radB.setText(getItem(mPageNumber).getAns_b());
         radC.setText(getItem(mPageNumber).getAns_c());
         radD.setText(getItem(mPageNumber).getAns_d());
+
+        if (checkAns != 0){
+            radA.setClickable(false);
+            radB.setClickable(false);
+            radC.setClickable(false);
+            radD.setClickable(false);
+            getCheckAns(getItem(mPageNumber).getResult());
+        }
         
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -79,11 +90,11 @@ public class ScreenSlidePageFragment extends Fragment {
         });
     }
 
-    public static ScreenSlidePageFragment create(ArrayList<Question> arr_Ques, int pageNumber){
+    public static ScreenSlidePageFragment create(int pageNumber, int checkAnswer){
         ScreenSlidePageFragment fragment = new ScreenSlidePageFragment();
         Bundle args = new Bundle();
-        //args.putParcelable("arr_Ques", Parcels.wrap(list));
         args.putInt(ARG_PAGE, pageNumber);
+        args.putInt(ARG_CHECKANSWER, checkAnswer);
         fragment.setArguments(args);
         return fragment;
     }
@@ -103,5 +114,18 @@ public class ScreenSlidePageFragment extends Fragment {
         }else if (ID == R.id.radD){
             return "D";
         }else return "";
+    }
+
+    // Hàm kiểm tra câu đúng, nếu câu đúng thì đổi màu background radiobutton tương ứng
+    private void getCheckAns(String ans){
+        if (ans.equals("A")){
+            radA.setBackgroundColor(Color.RED);
+        } else if (ans.equals("B")){
+            radB.setBackgroundColor(Color.RED);
+        } else if (ans.equals("C")){
+            radC.setBackgroundColor(Color.RED);
+        } else {
+            radD.setBackgroundColor(Color.RED);
+        }
     }
 }
