@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".monhoc.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Đây là ứng dụng ôn thi trắc nghiệm Toán, Lý, Hóa Sinh"
+        android:textAllCaps="true"
+        android:textColor="#cce21212"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</FrameLayout>

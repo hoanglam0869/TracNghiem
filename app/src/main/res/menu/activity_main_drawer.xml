@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home"
+            android:title="Home" />
+    </group>
+
+    <item android:title="Đề thi trắc nghiệm">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/montoan"
+                    android:icon="@drawable/math"
+                    android:title="Môn Toán" />
+                <item
+                    android:id="@+id/monly"
+                    android:icon="@drawable/physical"
+                    android:title="Môn Vật Lý" />
+                <item
+                    android:id="@+id/monhoa"
+                    android:icon="@drawable/chemistry"
+                    android:title="Môn Hóa Học" />
+                <item
+                    android:id="@+id/monsinh"
+                    android:icon="@drawable/biology"
+                    android:title="Môn Sinh Học" />
+            </group>
+        </menu>
+    </item>
+</menu>

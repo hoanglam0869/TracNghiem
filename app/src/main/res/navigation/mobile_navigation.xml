@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.hoanglam0869.tracnghiem.monhoc.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/montoan"
+        android:name="com.hoanglam0869.tracnghiem.monhoc.toanhoc.ToanHocFragment"
+        android:label="Môn Toán học"
+        tools:layout="@layout/fragment_toan_hoc" />
+
+    <fragment
+        android:id="@+id/monly"
+        android:name="com.hoanglam0869.tracnghiem.monhoc.vatly.VatLyFragment"
+        android:label="Môn Vật Lý"
+        tools:layout="@layout/fragment_vat_ly" />
+
+    <fragment
+        android:id="@+id/monhoa"
+        android:name="com.hoanglam0869.tracnghiem.monhoc.hoahoc.HoaHocFragment"
+        android:label="Môn Hóa Học"
+        tools:layout="@layout/fragment_hoa_hoc" />
+
+    <fragment
+        android:id="@+id/monsinh"
+        android:name="com.hoanglam0869.tracnghiem.monhoc.sinhhoc.SinhHocFragment"
+        android:label="Môn Sinh Học"
+        tools:layout="@layout/fragment_sinh_hoc" />
+
+</navigation>
