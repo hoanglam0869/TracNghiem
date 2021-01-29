@@ -19,6 +19,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import com.hoanglam0869.tracnghiem.R;
+import com.hoanglam0869.tracnghiem.TestDoneActivity;
 import com.hoanglam0869.tracnghiem.question.Question;
 import com.hoanglam0869.tracnghiem.question.QuestionController;
 
@@ -75,12 +76,14 @@ public class ScreenSlideActivity extends AppCompatActivity {
             }
         });
 
-        tvTimer.setOnClickListener(new View.OnClickListener() {
+        tvXemDiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ScreenSlideActivity.this, TestDoneActivity.class);
+                startActivity(intent);
             }
         });
+
         timer.start();
     }
 
