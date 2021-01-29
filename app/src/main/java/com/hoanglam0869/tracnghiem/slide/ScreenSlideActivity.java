@@ -196,6 +196,7 @@ public class ScreenSlideActivity extends AppCompatActivity {
 
     public void result(){
         checkAns = 1;
+        pagerAdapter.notifyDataSetChanged();
         mPager.setCurrentItem(0);
         tvXemDiem.setVisibility(View.VISIBLE);
         tvKiemTra.setVisibility(View.GONE);

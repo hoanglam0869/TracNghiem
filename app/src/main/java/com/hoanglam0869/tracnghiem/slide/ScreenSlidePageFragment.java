@@ -119,13 +119,29 @@ public class ScreenSlidePageFragment extends Fragment {
     // Hàm kiểm tra câu đúng, nếu câu đúng thì đổi màu background radiobutton tương ứng
     private void getCheckAns(String ans){
         if (ans.equals("A")){
-            radA.setBackgroundColor(Color.RED);
+            if (getItem(mPageNumber).getTraloi().equals("A")){
+                radA.setBackgroundColor(Color.GREEN);
+            } else {
+                radA.setBackgroundColor(Color.RED);
+            }
         } else if (ans.equals("B")){
-            radB.setBackgroundColor(Color.RED);
+            if (getItem(mPageNumber).getTraloi().equals("B")){
+                radB.setBackgroundColor(Color.GREEN);
+            } else {
+                radB.setBackgroundColor(Color.RED);
+            }
         } else if (ans.equals("C")){
-            radC.setBackgroundColor(Color.RED);
+            if (getItem(mPageNumber).getTraloi().equals("C")){
+                radC.setBackgroundColor(Color.GREEN);
+            } else {
+                radC.setBackgroundColor(Color.RED);
+            }
         } else {
-            radD.setBackgroundColor(Color.RED);
+            if (getItem(mPageNumber).getTraloi().equals("D")){
+                radD.setBackgroundColor(Color.GREEN);
+            } else {
+                radD.setBackgroundColor(Color.RED);
+            }
         }
     }
 }

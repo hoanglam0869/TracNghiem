@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TracNghiem">
-        <activity android:name=".slide.ScreenSlideActivity"></activity>
+        <activity android:name=".TestDoneActivity"></activity>
+        <activity android:name=".slide.ScreenSlideActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
