@@ -79,7 +79,9 @@ public class ScreenSlideActivity extends AppCompatActivity {
         tvXemDiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 Intent intent = new Intent(ScreenSlideActivity.this, TestDoneActivity.class);
+                intent.putExtra("arr_Ques", arr_Ques);
                 startActivity(intent);
             }
         });

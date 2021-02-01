@@ -1,6 +1,8 @@
 package com.hoanglam0869.tracnghiem.question;
 
-public class Question {
+import java.io.Serializable;
+
+public class Question implements Serializable {
     private int _id;
     private String question;
     private String ans_a;

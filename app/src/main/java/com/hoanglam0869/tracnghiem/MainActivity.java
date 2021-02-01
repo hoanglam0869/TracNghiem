@@ -60,13 +60,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         DBHelper db = new DBHelper(this);
-        /*try {
+        try {
             db.deleteDataBase();
             Toast.makeText(this, "Xóa thành công", Toast.LENGTH_SHORT).show();
         } catch (SQLException e) {
             e.printStackTrace();
             Toast.makeText(this, "Lỗi", Toast.LENGTH_SHORT).show();
-        }*/
+        }
 
         try {
             db.createDataBase();
