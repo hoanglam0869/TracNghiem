@@ -25,4 +25,14 @@ public class QuestionController {
         } while (cursor.moveToNext());
         return lsData;
     }
+
+    // Lấy danh sách câu hỏi theo câu hỏi...
+    public Cursor getSearchQuestion(String key){
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM cauhoi WHERE question LIKE '%" + key + "%'", null);
+        if (cursor != null){
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
 }

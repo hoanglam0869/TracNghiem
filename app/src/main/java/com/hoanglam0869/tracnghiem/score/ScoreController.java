@@ -6,9 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.hoanglam0869.tracnghiem.question.DBHelper;
-import com.hoanglam0869.tracnghiem.question.Question;
-
-import java.util.ArrayList;
 
 public class ScoreController {
     private DBHelper dbHelper;
@@ -36,7 +33,7 @@ public class ScoreController {
                 null,                // đối số điều kiện where
                 null,                    // biểu thức Groupby
                 null,                      // biểu thức Having
-                "id DESC",                // biểu thức order by
+                "score DESC",                // biểu thức order by
                 null
                  );
         if (cursor != null){

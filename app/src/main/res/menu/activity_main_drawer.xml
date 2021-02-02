@@ -29,6 +29,14 @@
                     android:id="@+id/monsinh"
                     android:icon="@drawable/biology"
                     android:title="Môn Sinh Học" />
+                <item
+                    android:id="@+id/search"
+                    android:icon="@drawable/search"
+                    android:title="Tìm Kiếm Câu Hỏi" />
+                <item
+                    android:id="@+id/score"
+                    android:icon="@drawable/grade"
+                    android:title="Danh Sách Điểm" />
             </group>
         </menu>
     </item>

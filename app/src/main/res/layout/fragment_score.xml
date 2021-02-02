@@ -9,18 +9,23 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Danh sách điểm"
-        android:textStyle="bold"
-        android:textSize="23sp"
-        android:textColor="#e41818"
         android:background="#4ea9f9"
+        android:gravity="center"
         android:padding="10dp"
-        android:gravity="center"/>
+        android:text="Danh sách điểm"
+        android:textColor="#e41818"
+        android:textSize="23sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
+        <ListView
+            android:id="@+id/lvScore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </LinearLayout>

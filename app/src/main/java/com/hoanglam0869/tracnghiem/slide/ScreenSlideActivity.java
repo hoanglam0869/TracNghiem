@@ -1,5 +1,6 @@
 package com.hoanglam0869.tracnghiem.slide;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -8,6 +9,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -96,13 +98,32 @@ public class ScreenSlideActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (mPager.getCurrentItem() == 0) {
-            // If the user is currently looking at the first step, allow the system to handle the
-            // Back button. This calls finish() on this activity and pops the back stack.
-            super.onBackPressed();
+            timer.cancel();
+            dialogExit();
         } else {
             // Otherwise, select the previous step.
             mPager.setCurrentItem(mPager.getCurrentItem() - 1);
         }
+    }
+
+    public void dialogExit(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(ScreenSlideActivity.this);
+        builder.setIcon(R.drawable.exit);
+        builder.setTitle("Thông báo");
+        builder.setMessage("Bạn có muốn thoát hay không?");
+        builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.show();
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
@@ -234,6 +255,7 @@ public class ScreenSlideActivity extends AppCompatActivity {
         @Override
         public void onFinish() {
             tvTimer.setText("00:00");  //SetText cho textview hiện thị thời gian.
+            result();
         }
     }
 }

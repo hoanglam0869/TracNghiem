@@ -85,7 +85,6 @@ public class TestDoneActivity extends AppCompatActivity {
                 TextView tvScore = view.findViewById(R.id.tvScore);
                 tvScore.setText(totalScore + " điểm");
 
-                builder.setTitle("Lưu điểm thi");
                 builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -93,6 +92,7 @@ public class TestDoneActivity extends AppCompatActivity {
                         String room = edtRoom.getText().toString();
                         scoreController.insertScore(name, totalScore, room);
                         Toast.makeText(TestDoneActivity.this, "Lưu điểm thành công!", Toast.LENGTH_SHORT).show();
+                        finish();
                         dialog.dismiss();
                     }
                 });

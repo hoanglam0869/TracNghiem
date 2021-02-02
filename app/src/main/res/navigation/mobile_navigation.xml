@@ -35,4 +35,16 @@
         android:label="Môn Sinh Học"
         tools:layout="@layout/fragment_sinh_hoc" />
 
+    <fragment
+        android:id="@+id/search"
+        android:name="com.hoanglam0869.tracnghiem.question.SearchQuesFragment"
+        android:label="Tìm Kiếm Câu Hỏi"
+        tools:layout="@layout/fragment_search_ques" />
+
+    <fragment
+        android:id="@+id/score"
+        android:name="com.hoanglam0869.tracnghiem.score.ScoreFragment"
+        android:label="Danh Sách Điểm"
+        tools:layout="@layout/fragment_score" />
+
 </navigation>

@@ -9,10 +9,8 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
-import com.hoanglam0869.tracnghiem.monhoc.home.HomeFragment;
 import com.hoanglam0869.tracnghiem.question.DBHelper;
 
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.home, R.id.montoan, R.id.monly, R.id.monhoa, R.id.monsinh)
+                R.id.home, R.id.montoan, R.id.monly, R.id.monhoa, R.id.monsinh, R.id.search, R.id.score)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -60,13 +58,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         DBHelper db = new DBHelper(this);
-        try {
+        /*try {
             db.deleteDataBase();
             Toast.makeText(this, "Xóa thành công", Toast.LENGTH_SHORT).show();
         } catch (SQLException e) {
             e.printStackTrace();
             Toast.makeText(this, "Lỗi", Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
         try {
             db.createDataBase();

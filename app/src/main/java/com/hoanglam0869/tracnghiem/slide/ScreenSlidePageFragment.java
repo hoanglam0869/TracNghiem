@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -34,6 +35,7 @@ public class ScreenSlidePageFragment extends Fragment {
     TextView tvNum, tvQuestion;
     RadioGroup radioGroup;
     RadioButton radA, radB, radC, radD;
+    ImageView imgIcon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,7 @@ public class ScreenSlidePageFragment extends Fragment {
         radB = rootView.findViewById(R.id.radB);
         radC = rootView.findViewById(R.id.radC);
         radD = rootView.findViewById(R.id.radD);
+        imgIcon = rootView.findViewById(R.id.ivIcon);
 
         return rootView;
     }
@@ -71,6 +74,7 @@ public class ScreenSlidePageFragment extends Fragment {
         radB.setText(getItem(mPageNumber).getAns_b());
         radC.setText(getItem(mPageNumber).getAns_c());
         radD.setText(getItem(mPageNumber).getAns_d());
+        //imgIcon.setImageResource(getResources().getIdentifier(getItem(mPageNumber).getImage() + "", "drawable", "com.hoanglam0869.tracnghiem"));
 
         if (checkAns != 0){
             radA.setClickable(false);

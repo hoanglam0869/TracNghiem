@@ -23,13 +23,14 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="Họ Tên" />
 
         <EditText
             android:id="@+id/edtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:hint="Type name..."
             android:inputType="textPersonName" />
     </LinearLayout>
 
@@ -41,13 +42,14 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="Phòng Học" />
 
         <EditText
             android:id="@+id/edtRoom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:hint="Type room..."
             android:inputType="textPersonName" />
     </LinearLayout>
 
